@@ -1,12 +1,18 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const YachtSchema = new Schema({
+const yachtSchema = new Schema({
     name: String,
     type: String,
     desctription: String,
     photo: String,
-    price: String
+    price: String,
+    bookings: [
+        {
+            dateFrom: Date,
+            dateTo: Date
+        }
+    ]
 })
 
-module.exports = mongoose.model('Yacht', YachtSchema)
+module.exports = mongoose.model('Yacht', yachtSchema)

@@ -1,17 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yacht Show</title>
-</head>
-
-<body>
-    <h1>
-        <%= yacht.name %>
-    </h1>
-</body>
-
-</html>
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-3">
+                <img src="<%=yacht.photo%>" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%= yacht.name %>
+                    </h5>
+                    <p class="card-text">
+                        <%= yacht.description %>
+                    </p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item text-muted">
+                            <%= yacht.type %>
+                        </li>
+                        <li class="list-group-item">Cena:
+                            <%= yacht.price %> PLN / doba
+                        </li>
+                    </ul>
+                    <div class="card-footer text-muted">
+                        <a class="text-dark" href="/yachts">Wszystkie jachty</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
