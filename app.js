@@ -36,7 +36,7 @@ app.get('/yachts/:id', async (req, res) => {
 })
 
 app.get('/yachts/:id/dates', async (req, res) => {
-    const yacht = await Yacht.findById(req.params.id)
+    const yacht = await Yacht.findById(req.params.id).populate('bookings')
     res.render('yachts/dates', { yacht })
 })
 

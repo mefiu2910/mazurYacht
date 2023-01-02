@@ -1,6 +1,15 @@
 <% layout('layouts/boilerplate') %>
 
-    <h2>Zarezerowane terminy dla jachtu <%= yacht.name %>:</h2>
+    <h2>Zarezerowane terminy dla jachtu <a class="text-dark" href="/yachts/<%= yacht._id %>">
+            <%= yacht.name %>
+        </a></h2>
+    <hr>
     <h3>
-        <%= yacht.bookings %>
+        <% for(let booking of yacht.bookings) {%>
+            <%= booking.dateFrom.toLocaleDateString() %> -
+                <%= booking.dateTo.toLocaleDateString() %>
+                    <hr>
+                    <% } %>
     </h3>
+    <h4>W celu zarezerwowania terminu prosimy o kontakt telefoniczny: <button class="btn btn-success">+48 789 344
+            301</button></h4>

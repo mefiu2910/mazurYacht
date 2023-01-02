@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const yachtSchema = new Schema({
     name: String,
     type: String,
-    desctription: String,
+    description: String,
     photo: String,
     price: String,
     bookings: [
